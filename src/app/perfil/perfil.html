@@ -1,0 +1,49 @@
+    <section class="perfil">
+      <h2>Mi Perfil</h2>
+
+      <div *ngIf="!loading; else cargando">
+        <form (ngSubmit)="guardar()" #f="ngForm" class="form">
+          <div class="row">
+            <label>Nombre</label>
+            <input name="nombre" [(ngModel)]="nombre" required />
+          </div>
+
+          <div class="row">
+            <label>Email</label>
+            <input name="email" [(ngModel)]="email" required type="email" />
+          </div>
+
+          <hr />
+
+          <h4>Cambiar contraseña (opcional)</h4>
+          <div class="row">
+            <label>Nueva contraseña</label>
+            <input name="password" type="password" minlength="6" [(ngModel)]="password" />
+          </div>
+          <div class="row">
+            <label>Confirmar contraseña</label>
+            <input name="confirmPassword" type="password" minlength="6" [(ngModel)]="confirmPassword" />
+          </div>
+
+          <div *ngIf="error" class="error">{{ error }}</div>
+          <div *ngIf="success" class="success">{{ success }}</div>
+
+          <div class="actions">
+            <button type="submit" [disabled]="working">
+              {{ working ? 'Guardando...' : 'Guardar cambios' }}
+            </button>
+            <button type="button" (click)="cancelar()" [disabled]="working">Cancelar</button>
+          </div>
+        </form>
+
+        <hr />
+
+        <div class="meta">
+          <small>ID: {{ user?.id }} · Rol: {{ user?.role }}</small>
+        </div>
+      </div>
+
+      <ng-template #cargando>
+        <p>Cargando perfil...</p>
+      </ng-template>
+    </section>

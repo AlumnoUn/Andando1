@@ -1,0 +1,34 @@
+<!-- 
+ <section>
+      <h2>Mis recetas</h2>
+      <p *ngIf="!recetas.length">No tenés recetas aún. <a routerLink="/crear-receta">Crear una</a></p>
+      <div class="grid">
+        <article class="card" *ngFor="let r of recetas">
+          <h3>{{ r.titulo }}</h3>
+          <p class="meta">{{ r.categoria }} · {{ r.dificultad }}</p>
+          <a [routerLink]="['/receta', r.id]">Ver</a>
+        </article>
+      </div>
+    </section>  -->
+
+        <section>
+      <h2>Mis recetas</h2>
+      <p *ngIf="!recetas.length">No tenés recetas aún. <a routerLink="/crear-receta">Crear una</a></p>
+
+      <div class="grid">
+        <article class="card" *ngFor="let r of recetas">
+          <div class="head">
+            <h3>{{ r.titulo }}</h3>
+
+            <div class="actions" *ngIf="puedeModificar(r)">
+              <button class="edit-btn" (click)="editar(r)">Editar ✎</button>
+              <button class="delete-btn" (click)="eliminar(r)">Eliminar 🗑</button>
+            </div>
+          </div>
+
+          <p class="meta">{{ r.categoria }} · {{ r.dificultad }}</p>
+          <p>{{ r.descripcion | slice:0:120 }}...</p>
+          <a [routerLink]="['/receta', r.id]">Ver</a>
+        </article>
+      </div>
+    </section>

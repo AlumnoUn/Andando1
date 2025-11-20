@@ -1,0 +1,35 @@
+<section>
+      <h1>Recetas</h1>
+
+      <div class="filters">
+        <!--<input placeholder="Buscar..." [(ngModel)]="q" (ngModelChange)="onFilterChange()" /> -->
+        <select [(ngModel)]="categoria" (change)="onFilterChange()">
+          <option value="">Todas</option>
+          <option>Desayuno</option>
+          <option>Almuerzo</option>
+          <option>Cena</option>
+          <option>Postre</option>
+        </select>
+      </div>
+
+      <div class="grid">
+        <article class="card" *ngFor="let r of recetas">
+          <div class="card-head">
+            <h3>{{ r.titulo }}</h3>
+            <button class="fav-btn" (click)="toggleFavorito(r)">
+              <span *ngIf="isFavorito(r.id); else noFav">★</span>
+              <ng-template #noFav>☆</ng-template>
+            </button>
+          </div>
+          <p class="meta">{{ r.categoria }} · {{ r.dificultad }} · {{ r.tiempo }} min</p>
+          <p>{{ r.descripcion | slice:0:120 }}...</p>
+          <a [routerLink]="['/receta', r.id]">Ver receta</a>
+        </article>
+      </div>
+
+      <div class="pagination" *ngIf="!showAll">
+        <!--<button (click)="prev()" [disabled]="page===1">Anterior</button>
+        <span>Página {{page}}</span>
+        <button (click)="next()">Siguiente</button> -->
+      </div>
+    </section>

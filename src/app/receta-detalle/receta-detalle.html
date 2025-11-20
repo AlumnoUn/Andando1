@@ -1,0 +1,71 @@
+    <section *ngIf="receta; else cargando">
+      <div class="head">
+        <div>
+          <h1>{{ receta.titulo }}</h1>
+          <p class="meta">{{ receta.categoria }} · {{ receta.dificultad }} · {{ receta.tiempo }} min</p>
+        </div>
+
+        <div class="acciones-top">
+          <button class="fav-btn" (click)="toggleFavorito()">
+            <span *ngIf="isFavorito; else noFav">★ Favorito</span>
+            <ng-template #noFav>☆ Agregar a favoritos</ng-template>
+          </button>
+
+          <button *ngIf="puedeModificarReceta()" class="edit-btn" (click)="editarReceta()">Editar</button>
+          <button *ngIf="puedeModificarReceta()" class="delete-btn" (click)="eliminarReceta()">Eliminar</button>
+        </div>
+      </div>
+
+      <div class="descripcion">
+        <p>{{ receta.descripcion }}</p>
+      </div>
+
+      <hr />
+
+      <section class="comentarios-section">
+        <h3>Comentarios ({{ comentarios.length }})</h3>
+
+        <div *ngIf="auth.isLoggedIn(); else loginToComment" class="nuevo-comentario">
+          <form (ngSubmit)="enviarComentario()" #formC="ngForm">
+            <textarea name="texto" [(ngModel)]="nuevoComentario" required rows="3" placeholder="Escribí tu comentario..."></textarea>
+            <div class="actions-form">
+              <button type="submit" [disabled]="!nuevoComentario.trim()">Comentar</button>
+            </div>
+          </form>
+        </div>
+
+        <ng-template #loginToComment>
+          <p><a routerLink="/login">Iniciá sesión</a> para dejar un comentario.</p>
+        </ng-template>
+
+        <div class="lista-comentarios">
+          <article class="comentario" *ngFor="let cm of comentarios">
+            <div class="meta-comentario">
+              <strong>{{ displayNameFor(cm.usuarioId) }}</strong>
+              <small>{{ cm.createdAt | date:'short' }} <span *ngIf="cm.editedAt"> (editado)</span></small>
+            </div>
+
+            <div *ngIf="editingId !== cm.id; else editTpl">
+              <p class="texto">{{ cm.texto }}</p>
+            </div>
+
+            <ng-template #editTpl>
+              <textarea [(ngModel)]="editingTexto" rows="3"></textarea>
+              <div class="edit-actions">
+                <button (click)="guardarEdicion(cm)">Guardar</button>
+                <button (click)="cancelarEdicion()">Cancelar</button>
+              </div>
+            </ng-template>
+
+            <div class="acciones-comentario" *ngIf="puedeModificarComentario(cm)">
+              <button (click)="startEdit(cm)">Editar</button>
+              <button (click)="borrarComentario(cm)">Eliminar</button>
+            </div>
+          </article>
+        </div>
+      </section>
+    </section>
+
+    <ng-template #cargando>
+      <p>Cargando receta...</p>
+    </ng-template>

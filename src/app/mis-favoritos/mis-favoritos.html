@@ -1,0 +1,13 @@
+    <section>
+      <h2>Mis favoritos</h2>
+
+      <p *ngIf="!recetas.length">No tenes recetas en favoritos.</p>
+
+      <div class="grid">
+        <article class="card" *ngFor="let r of recetas">
+          <h3>{{ r.titulo }}</h3>
+          <p class="meta">{{ r.categoria }} · {{ r.dificultad }}</p>
+          <a [routerLink]="['/receta', r.id]">Ver</a>
+        </article>
+      </div>
+    </section>

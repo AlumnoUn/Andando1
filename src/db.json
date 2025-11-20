@@ -1,0 +1,262 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "nombre": "Admin Cocina",
+      "email": "admin@cocinafacil.local",
+      "password": "admin123",
+      "role": "admin"
+    },
+    {
+      "id": "2",
+      "nombre": "María López",
+      "email": "maria@example.com",
+      "password": "maria2025",
+      "role": "user"
+    },
+    {
+      "id": "3",
+      "nombre": "Juan Pérez",
+      "email": "juan@example.com",
+      "password": "juan2025",
+      "role": "user"
+    },
+    {
+      "id": "40c9",
+      "nombre": "pepe",
+      "email": "adasd@as.com",
+      "password": "123456",
+      "role": "user"
+    },
+    {
+      "id": "1a13",
+      "nombre": "peperoni",
+      "email": "pepol@asd.com",
+      "password": "987654",
+      "role": "user"
+    },
+    {
+      "id": "16c7",
+      "nombre": "alex",
+      "email": "alexqwe",
+      "password": "456789",
+      "role": "user"
+    }
+  ],
+  "recetas": [
+    {
+      "id": "1",
+      "titulo": "Tostadas Francesas",
+      "descripcion": "Tostadas suaves y doradas con canela y miel. Perfectas para el desayuno rápido.",
+      "categoria": "Desayuno",
+      "dificultad": "Fácil",
+      "tiempo": 20,
+      "autorId": 2,
+      "createdAt": "2025-10-28T09:00:00Z"
+    },
+    {
+      "id": "2",
+      "titulo": "Ensalada Mediterránea",
+      "descripcion": "Ensalada fresca con tomate, pepino, aceitunas y queso feta. Ideal para un almuerzo ligero.",
+      "categoria": "Almuerzo",
+      "dificultad": "Fácil",
+      "tiempo": 15,
+      "autorId": 3,
+      "createdAt": "2025-10-30T12:30:00Z"
+    },
+    {
+      "id": "3",
+      "titulo": "Pollo al Horno con Hierbas",
+      "descripcion": "Pollo jugoso al horno con mezcla de hierbas, acompañado de verduras asadas.",
+      "categoria": "Cena",
+      "dificultad": "Media",
+      "tiempo": 60,
+      "autorId": 2,
+      "createdAt": "2025-11-01T19:00:00Z"
+    },
+    {
+      "id": "4",
+      "titulo": "Brownies de Chocolate",
+      "descripcion": "Brownies densos y húmedos, con intenso sabor a chocolate. Postre clásico y fácil.",
+      "categoria": "Postre",
+      "dificultad": "Fácil",
+      "tiempo": 35,
+      "autorId": 3,
+      "createdAt": "2025-11-02T16:15:00Z"
+    },
+    {
+      "id": "5",
+      "titulo": "Milanesa con Puré",
+      "descripcion": "Milanesa crujiente acompañada de puré cremoso de papa. Plato reconfortante para la cena.",
+      "categoria": "Cena",
+      "dificultad": "Media",
+      "tiempo": 45,
+      "autorId": 1,
+      "createdAt": "2025-11-03T20:00:00Z"
+    },
+    {
+      "id": "6",
+      "titulo": "Pancakes Esponjosos",
+      "descripcion": "Pancakes altos y esponjosos, servidos con miel o mermelada.",
+      "categoria": "Desayuno",
+      "dificultad": "Fácil",
+      "tiempo": 25,
+      "autorId": 2,
+      "createdAt": "2025-11-04T08:30:00Z"
+    },
+    {
+      "id": "7",
+      "titulo": "Salmón al Horno",
+      "descripcion": "Filetes de salmón horneados con limón y hierbas frescas, fáciles y rápidos.",
+      "categoria": "Cena",
+      "dificultad": "Fácil",
+      "tiempo": 30,
+      "autorId": 1,
+      "createdAt": "2025-11-14T19:00:00Z"
+    },
+    {
+      "id": "8",
+      "titulo": "Lasagna de Verduras",
+      "descripcion": "Capas de pasta con verduras, salsa de tomate y queso gratinado.",
+      "categoria": "Almuerzo",
+      "dificultad": "Media",
+      "tiempo": 60,
+      "autorId": 2,
+      "createdAt": "2025-11-12T13:30:00Z"
+    },
+    {
+      "id": "9",
+      "titulo": "Sopa Minestrone",
+      "descripcion": "Sopa italiana de verduras, legumbres y pasta, ideal para cenas ligeras.",
+      "categoria": "Cena",
+      "dificultad": "Fácil",
+      "tiempo": 40,
+      "autorId": 3,
+      "createdAt": "2025-11-12T18:15:00Z"
+    },
+    {
+      "id": "10",
+      "titulo": "Muffins de Arándanos",
+      "descripcion": "Muffins suaves y esponjosos con arándanos frescos, perfectos para desayuno o merienda.",
+      "categoria": "Desayuno",
+      "dificultad": "Fácil",
+      "tiempo": 25,
+      "autorId": 4,
+      "createdAt": "2025-11-13T09:20:00Z"
+    },
+    {
+      "id": "11",
+      "titulo": "Pollo al Curry",
+      "descripcion": "Tiernos trozos de pollo cocidos en una salsa cremosa de curry y especias.",
+      "categoria": "Almuerzo",
+      "dificultad": "Media",
+      "tiempo": 45,
+      "autorId": 1,
+      "createdAt": "2025-11-13T12:50:00Z"
+    },
+    {
+      "id": "12",
+      "titulo": "Tarta de Queso",
+      "descripcion": "Clásica tarta de queso con base crujiente y cobertura ligera de frutas.",
+      "categoria": "Postre",
+      "dificultad": "Media",
+      "tiempo": 50,
+      "autorId": 2,
+      "createdAt": "2025-11-13T15:10:00Z"
+    },
+    {
+      "id": "13",
+      "titulo": "Crepes de Nutella",
+      "descripcion": "Finísimos crepes rellenos de Nutella, ideales para un desayuno o postre dulce.",
+      "categoria": "Desayuno",
+      "dificultad": "Fácil",
+      "tiempo": 20,
+      "autorId": 3,
+      "createdAt": "2025-11-14T08:40:00Z"
+    },
+    {
+      "id": "14",
+      "titulo": "Quiche de Espinaca",
+      "descripcion": "Quiche salada con espinaca, huevo y queso, perfecta para almuerzos ligeros.",
+      "categoria": "Almuerzo",
+      "dificultad": "Media",
+      "tiempo": 35,
+      "autorId": 4,
+      "createdAt": "2025-11-14T13:15:00Z"
+    },
+    {
+      "id": "8679",
+      "titulo": "pibes envueltos",
+      "descripcion": "Suculentos pedacitos envueltos en una hoja de choclo",
+      "categoria": "Desayuno",
+      "dificultad": "Fácil",
+      "tiempo": 10,
+      "autorId": "40c9",
+      "createdAt": "2025-11-18T20:30:42.078Z"
+    },
+    {
+      "id": "d2d6",
+      "titulo": "Pancho galactico",
+      "descripcion": "Un pancho creado con ingredientes de otro planeta y mucha magia. Tiene un sabor marinado y tormentoso.",
+      "categoria": "Almuerzo",
+      "dificultad": "Difícil",
+      "tiempo": 5,
+      "autorId": "16c7",
+      "createdAt": "2025-11-18T22:28:17.136Z"
+    }
+  ],
+  "favoritos": [
+    {
+      "id": "1",
+      "usuarioId": 2,
+      "recetaId": 4,
+      "createdAt": "2025-11-05T10:00:00Z"
+    },
+    {
+      "id": "2",
+      "usuarioId": 3,
+      "recetaId": 1,
+      "createdAt": "2025-11-06T11:15:00Z"
+    },
+    {
+      "id": "3",
+      "usuarioId": 2,
+      "recetaId": 3,
+      "createdAt": "2025-11-07T09:30:00Z"
+    },
+    {
+      "id": "05a6",
+      "usuarioId": "40c9",
+      "recetaId": "3",
+      "createdAt": "2025-11-19T04:41:31.673Z"
+    },
+    {
+      "id": "a39f",
+      "usuarioId": "40c9",
+      "recetaId": "8679",
+      "createdAt": "2025-11-19T04:51:55.336Z"
+    },
+    {
+      "id": "296b",
+      "usuarioId": "40c9",
+      "recetaId": "d2d6",
+      "createdAt": "2025-11-19T05:22:13.146Z"
+    }
+  ],
+  "comentarios": [
+    {
+      "id": "1",
+      "recetaId": "ed39",
+      "usuarioId": 2,
+      "texto": "Genial!",
+      "createdAt": "2025-11-18..."
+    },
+    {
+      "id": "a28d",
+      "recetaId": "8",
+      "usuarioId": "40c9",
+      "texto": "muy buena receta!",
+      "createdAt": "2025-11-19T02:24:52.446Z"
+    }
+  ]
+}

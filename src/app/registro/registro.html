@@ -1,0 +1,10 @@
+<section>
+      <h2>Registro</h2>
+      <form (ngSubmit)="onSubmit()">
+        <div><label>Nombre</label><input [(ngModel)]="nombre" name="nombre" required /></div>
+        <div><label>Email</label><input [(ngModel)]="email" name="email" required type="email" /></div>
+        <div><label>Contraseña</label><input [(ngModel)]="password" name="password" required minlength="6" type="password" /></div>
+        <div *ngIf="error" class="error">{{ error }}</div>
+        <button type="submit">Crear cuenta</button>
+      </form>
+    </section>

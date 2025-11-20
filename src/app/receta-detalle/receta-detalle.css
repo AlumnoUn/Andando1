@@ -1,0 +1,251 @@
+
+section {
+  max-width: 850px;
+  margin: 0 auto;
+  background: #ffffff;
+  padding: 25px 30px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  border-left: 6px solid #2ecc71;
+}
+
+.head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+.head h1 {
+  margin: 0;
+  font-size: 32px;
+  color: #2e7d32;
+  font-weight: 700;
+}
+
+.meta {
+  color: #558b2f;
+  font-size: 15px;
+  margin-top: 4px;
+}
+
+.acciones-top {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.fav-btn {
+  background: #fffde7;
+  color: #ffcc00;
+  border: 2px solid #ffe082;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s, background 0.2s;
+}
+
+.fav-btn:hover {
+  background: #fff8c5;
+  transform: translateY(-2px);
+}
+
+.edit-btn,
+.delete-btn {
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.edit-btn {
+  background: #a5d6a7;
+  color: #1b5e20;
+}
+.edit-btn:hover {
+  background: #8bc78f;
+  transform: translateY(-2px);
+}
+
+.delete-btn {
+  background: #ffebee;
+  color: #c62828;
+}
+.delete-btn:hover {
+  background: #ffcdd2;
+  transform: translateY(-2px);
+}
+
+.descripcion {
+  margin: 20px 0;
+}
+.descripcion p {
+  color: #333;
+  line-height: 1.5;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #e0e0e0;
+  margin: 30px 0;
+}
+
+.comentarios-section h3 {
+  font-size: 24px;
+  color: #2e7d32;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.nuevo-comentario textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 2px solid #a5d6a7;
+  border-radius: 10px;
+  font-size: 15px;
+  background: #f8fff9;
+  color: #2f4f2f;
+  outline: none;
+  resize: none;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.nuevo-comentario textarea:focus {
+  border-color: #2ecc71;
+  box-shadow: 0 0 6px rgba(46, 204, 113, 0.4);
+}
+
+.actions-form {
+  margin-top: 10px;
+  text-align: right;
+}
+
+.actions-form button {
+  background: #2ecc71;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.actions-form button:hover:not([disabled]) {
+  background: #27ae60;
+  transform: translateY(-2px);
+}
+
+.actions-form button[disabled] {
+  background: #b2dfdb;
+  cursor: not-allowed;
+}
+
+.comentarios-section a {
+  color: #2ecc71;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.comentarios-section a:hover {
+  text-decoration: underline;
+}
+
+.lista-comentarios {
+  margin-top: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.comentario {
+  background: #ffffff;
+  padding: 14px 18px;
+  border-radius: 12px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+  border-left: 4px solid #2ecc71;
+}
+
+.meta-comentario {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  color: #558b2f;
+}
+
+.meta-comentario strong {
+  color: #2e7d32;
+}
+
+.comentario .texto {
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.acciones-comentario {
+  display: flex;
+  gap: 10px;
+}
+
+.acciones-comentario button {
+  background: #a5d6a7;
+  color: #1b5e20;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-size: 13px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.acciones-comentario button:hover {
+  background: #8bc78f;
+  transform: translateY(-2px);
+}
+
+.edit-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.edit-actions button {
+  background: #2ecc71;
+  color: white;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.edit-actions button:hover {
+  background: #27ae60;
+  transform: translateY(-2px);
+}
+
+.edit-actions button:last-child {
+  background: #b2dfdb;
+  color: #004d40;
+}
+
+.edit-actions button:last-child:hover {
+  background: #a0cbc6;
+  transform: translateY(-2px);
+}
+
+.comentario textarea {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #a5d6a7;
+  border-radius: 10px;
+  outline: none;
+  resize: none;
+  background: #f8fff9;
+}

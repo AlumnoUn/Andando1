@@ -1,0 +1,22 @@
+    <section>
+      <h2>Admin — Todas las recetas</h2>
+      <p *ngIf="!recetas.length">No hay recetas cargadas.</p>
+
+      <div class="grid">
+        <article class="card" *ngFor="let r of recetas">
+          <div class="head">
+            <div>
+              <h3>{{ r.titulo }}</h3>
+              <p class="meta small">Autor: {{ r.autorId }} · {{ r.categoria }} · {{ r.dificultad }}</p>
+            </div>
+
+            <div class="actions">
+              <button class="delete-btn" (click)="eliminar(r)">Eliminar</button>
+            </div>
+          </div>
+
+          <p class="descripcion">{{ r.descripcion | slice:0:200 }}{{ r.descripcion.length>200 ? '...' : '' }}</p>
+          <a [routerLink]="['/receta', r.id]">Ver detalle</a>
+        </article>
+      </div>
+    </section>

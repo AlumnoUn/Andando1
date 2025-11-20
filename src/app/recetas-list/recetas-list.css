@@ -1,0 +1,136 @@
+
+section h1 {
+  font-size: 32px;
+  color: #2e7d32;
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: 700;
+}
+
+.filters {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin-bottom: 25px;
+}
+
+.filters input,
+.filters select {
+  padding: 10px 14px;
+  border: 2px solid #a5d6a7;
+  border-radius: 10px;
+  font-size: 15px;
+  outline: none;
+  background: #f8fff9;
+  color: #2f4f2f;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.filters input:focus,
+.filters select:focus {
+  border-color: #2ecc71;
+  box-shadow: 0 0 6px rgba(46, 204, 113, 0.4);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: white;
+  border-radius: 14px;
+  padding: 18px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s, box-shadow 0.2s;
+  border-left: 6px solid #2ecc71;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
+}
+
+.card-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-head h3 {
+  margin: 0;
+  font-size: 20px;
+  color: #1b5e20;
+  font-weight: 600;
+}
+.fav-btn {
+  background: none;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+  color: #ffcc00;
+  transition: transform 0.2s;
+}
+
+.fav-btn:hover {
+  transform: scale(1.2);
+}
+
+.meta {
+  color: #558b2f;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.card p {
+  color: #333;
+  margin-bottom: 12px;
+}
+
+.card a {
+  display: inline-block;
+  text-decoration: none;
+  color: white;
+  background: #2ecc71;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.card a:hover {
+  background: #27ae60;
+  transform: translateY(-2px);
+}
+
+
+.pagination {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+  font-size: 16px;
+}
+
+.pagination button {
+  background: #2ecc71;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.pagination button[disabled] {
+  background: #b2dfdb;
+  cursor: not-allowed;
+}
+
+.pagination button:hover:not([disabled]) {
+  background: #27ae60;
+  transform: translateY(-2px);
+}

@@ -1,1 +1,8 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+  background-image: url('../public/92dba0426812f000be8f35347928f8c09a44c2ae.jpg');
+  background-repeat: repeat;
+  background-attachment: fixed;
+  /*background-size: 300px 300px;*/
+  /*background-size: 398px 517px;*/
+  margin: 0;
+}

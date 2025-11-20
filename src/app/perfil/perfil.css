@@ -1,0 +1,124 @@
+section.perfil {
+  max-width: 600px;
+  margin: 0 auto;
+  background: white;
+  padding: 25px 30px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  border-left: 6px solid #2ecc71;
+}
+
+section.perfil h2 {
+  font-size: 30px;
+  color: #2e7d32;
+  text-align: center;
+  margin-bottom: 25px;
+  font-weight: 700;
+}
+
+/* FORMULARIO */
+.form .row {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 18px;
+}
+
+.form label {
+  font-weight: 600;
+  color: #1b5e20;
+  margin-bottom: 6px;
+}
+
+.form input {
+  padding: 10px 14px;
+  border: 2px solid #a5d6a7;
+  border-radius: 10px;
+  font-size: 15px;
+  outline: none;
+  background: #f8fff9;
+  color: #2f4f2f;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form input:focus {
+  border-color: #2ecc71;
+  box-shadow: 0 0 6px rgba(46, 204, 113, 0.4);
+}
+
+/* SEPARADORES */
+section.perfil hr {
+  border: none;
+  border-top: 1px solid #e0e0e0;
+  margin: 25px 0;
+}
+
+section.perfil h4 {
+  color: #2e7d32;
+  margin-bottom: 15px;
+}
+
+/* MENSAJES */
+.error {
+  background: #ffebee;
+  color: #c62828;
+  padding: 10px 12px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  border-left: 4px solid #e53935;
+}
+
+.success {
+  background: #e8f5e9;
+  color: #2e7d32;
+  padding: 10px 12px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  border-left: 4px solid #43a047;
+}
+
+/* BOTONES */
+.actions {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.actions button {
+  background: #2ecc71;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 18px;
+  font-size: 15px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.actions button:hover:not([disabled]) {
+  background: #27ae60;
+  transform: translateY(-2px);
+}
+
+.actions button[disabled] {
+  background: #b2dfdb;
+  cursor: not-allowed;
+}
+
+.actions button[type="button"] {
+  background: #a5d6a7;
+}
+
+.actions button[type="button"]:hover:not([disabled]) {
+  background: #8bc78f;
+}
+
+/* META */
+.meta small {
+  color: #558b2f;
+  font-size: 14px;
+  display: block;
+  text-align: center;
+  margin-top: 10px;
+}

@@ -1,0 +1,64 @@
+
+section h2 {
+  font-size: 28px;
+  color: #2e7d32;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 18px;
+}
+
+section p {
+  text-align: center;
+  color: #2f4f2f;
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: white;
+  padding: 18px;
+  border-radius: 14px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.07);
+  border-left: 6px solid #27ae60; 
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+}
+
+.card h3 {
+  margin: 0;
+  font-size: 20px;
+  color: #1b5e20;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.card .meta {
+  color: #558b2f;
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+.card a {
+  display: inline-block;
+  text-decoration: none;
+  background: #2ecc71;
+  color: white;
+  padding: 7px 14px;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.card a:hover {
+  background: #27ae60;
+  transform: translateY(-2px);
+}
