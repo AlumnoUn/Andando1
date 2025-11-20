@@ -24,7 +24,7 @@
     {
       "id": "40c9",
       "nombre": "pepe",
-      "email": "adasd@as.com",
+      "email": "adas@das.com",
       "password": "123456",
       "role": "user"
     },
@@ -40,6 +40,13 @@
       "nombre": "alex",
       "email": "alexqwe",
       "password": "456789",
+      "role": "user"
+    },
+    {
+      "id": "09a7",
+      "nombre": "matias",
+      "email": "matias@matias.com",
+      "password": "123456",
       "role": "user"
     }
   ],
@@ -203,6 +210,16 @@
       "tiempo": 5,
       "autorId": "16c7",
       "createdAt": "2025-11-18T22:28:17.136Z"
+    },
+    {
+      "id": "fa1f",
+      "titulo": "Sanguche de bondiola de cerdo",
+      "descripcion": "Cortar la bondiola en fetas y meterlas dentro del pan. Ya esta.",
+      "categoria": "Almuerzo",
+      "dificultad": "Fácil",
+      "tiempo": 7,
+      "autorId": "09a7",
+      "createdAt": "2025-11-20T03:25:21.395Z"
     }
   ],
   "favoritos": [
@@ -231,16 +248,16 @@
       "createdAt": "2025-11-19T04:41:31.673Z"
     },
     {
-      "id": "a39f",
-      "usuarioId": "40c9",
-      "recetaId": "8679",
-      "createdAt": "2025-11-19T04:51:55.336Z"
-    },
-    {
       "id": "296b",
       "usuarioId": "40c9",
       "recetaId": "d2d6",
       "createdAt": "2025-11-19T05:22:13.146Z"
+    },
+    {
+      "id": "cec3",
+      "usuarioId": "40c9",
+      "recetaId": "8679",
+      "createdAt": "2025-11-20T03:01:43.840Z"
     }
   ],
   "comentarios": [

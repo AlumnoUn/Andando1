@@ -12,4 +12,5 @@ bootstrapApplication(AppComponent, {
 }).catch(err => console.error(err));
 
 // json-server --watch db.json
+// json-server --watch db.json --port 3000
 // ng serve

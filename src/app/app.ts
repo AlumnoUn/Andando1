@@ -108,6 +108,9 @@ export class AppComponent {
 
   logout() {
     this.auth.logout();
+    this.router.navigateByUrl('/').then(() => {
+      location.reload();
+    });
   }
 
   goHome() {
