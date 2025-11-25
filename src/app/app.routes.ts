@@ -1,5 +1,4 @@
-//import { RecetasListComponent } from '../recetas-list';
-//import { RecetaFormComponent } from '/receta-form';
+
 import { Routes } from '@angular/router';
 import { RecetasListComponent } from './recetas-list/recetas-list';
 import { LoginComponent } from './login/login';

@@ -26,7 +26,7 @@ export class UsersService {
         if (u) this.cache.set(key, u);
       }),
       catchError(err => {
-        // si no existe o error, devuelve null y no rompe
+
         console.warn('UsersService.getUserById error', err);
         return of(null);
       })

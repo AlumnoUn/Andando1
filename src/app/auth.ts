@@ -11,7 +11,6 @@ export class AuthService {
   private api = 'http://localhost:3000';
   private storageKey = 'cocina_user';
 
-  // LOGIN  retorna Promise<User|null> para que await this.auth.login(...) funcione
   async login(email: string, password: string): Promise<User | null> {
     const url = `${this.api}/users`;
     
@@ -53,7 +52,6 @@ export class AuthService {
     return !!this.getUser();
   }
 
-  // updateUser y changePassword devuelven Observable porque el Perfil usa subscribe
   updateUser(id: number | string, payload: Partial<User>): Observable<User> {
     const url = `${this.api}/users/${id}`;
     return this.http.patch<User>(url, payload).pipe(

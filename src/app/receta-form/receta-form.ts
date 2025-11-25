@@ -51,7 +51,6 @@ export class RecetaFormComponent implements OnInit {
         this.categoria = r.categoria;
         this.dificultad = r.dificultad;
         this.tiempo = Number(r.tiempo) || 0;
-        // comprueba permisos, si puede o no editar.
         const user = this.auth.getUser();
         const autorId = String(r.autorId);
         const userId = user ? String(user.id) : null;
@@ -114,39 +113,3 @@ export class RecetaFormComponent implements OnInit {
     this.router.navigateByUrl('/mis-recetas');
   }
 }
-
-
-
-//////////////////////////////////////////////////////////////////////////////////////////////
-// export class RecetaFormComponent {
-//   private recetasSvc = inject(RecetasService);
-//   private auth = inject(AuthService);
-//   private router = inject(Router);
-
-//   titulo = '';
-//   descripcion = '';
-//   categoria: any = 'Desayuno';
-//   dificultad: any = 'Fácil';
-//   tiempo = 20;
-//   error: string | null = null;
-
-//   submit() {
-//     const user = this.auth.getUser();
-//     if (!user) {
-//       this.error = 'Debes iniciar sesión';
-//       return;
-//     }
-//     const payload = {
-//       titulo: this.titulo,
-//       descripcion: this.descripcion,
-//       categoria: this.categoria,
-//       dificultad: this.dificultad,
-//       tiempo: Number(this.tiempo),
-//       autorId: user.id
-//     };
-//     this.recetasSvc.crearReceta(payload).subscribe({
-//       next: () => this.router.navigateByUrl('/mis-recetas'),
-//       error: e => this.error = 'Error al crear receta'
-//     });
-//   }
-// }

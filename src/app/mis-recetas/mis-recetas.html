@@ -1,19 +1,6 @@
-<!-- 
- <section>
-      <h2>Mis recetas</h2>
-      <p *ngIf="!recetas.length">No tenés recetas aún. <a routerLink="/crear-receta">Crear una</a></p>
-      <div class="grid">
-        <article class="card" *ngFor="let r of recetas">
-          <h3>{{ r.titulo }}</h3>
-          <p class="meta">{{ r.categoria }} · {{ r.dificultad }}</p>
-          <a [routerLink]="['/receta', r.id]">Ver</a>
-        </article>
-      </div>
-    </section>  -->
-
         <section>
       <h2>Mis recetas</h2>
-      <!-- <p *ngIf="!recetas.length">No tenés recetas aún. <a routerLink="/crear-receta">Crear una</a></p> -->
+     
             <p>
       <span *ngIf="!recetas.length">No tenés recetas aún.</span>
       <span *ngIf="recetas.length">Querés agregar otra receta?</span>

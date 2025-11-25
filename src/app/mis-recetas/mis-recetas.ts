@@ -73,7 +73,7 @@ export class MisRecetasComponent implements OnInit {
 
     this.recetasSvc.eliminarRecetaConFavoritos(receta.id).subscribe({
       next: () => {
-        // quitar localmente y mantener la UI actualizada
+
         this.recetas = this.recetas.filter(r => String(r.id) !== String(receta.id));
       },
       error: err => {
@@ -83,12 +83,3 @@ export class MisRecetasComponent implements OnInit {
     });
   }
 }
-
-///////////////////////////////////////////////////////////////////////////////////////////////////////
-//   ngOnInit() {
-//     const user = this.auth.getUser();
-//     if (user) {
-//       this.recetasSvc.getRecetasPorAutor(user.id).subscribe(r => this.recetas = r);
-//     }
-//   }
-// }

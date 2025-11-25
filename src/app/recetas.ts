@@ -52,13 +52,9 @@ export class RecetasService {
     return this.http.delete(`${this.api}/recetas/${id}`);
   }
 
-  /**
-   * Elimina la receta y luego elimina todos los favoritos vinculados.
-   * Devuelve un Observable que completa cuando ambas acciones terminaron.
-   */
+
   eliminarRecetaConFavoritos(id: number | string): Observable<void> {
     return this.http.delete<void>(`${this.api}/recetas/${id}`).pipe(
-      // borrar favoritos vinculados si hay
       switchMap(() => this.favSvc.removeFavoritosByRecetaId(id))
     );
   }

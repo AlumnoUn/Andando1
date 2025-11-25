@@ -38,7 +38,6 @@ export class RecetaDetalleComponent implements OnInit {
   editingId?: string | number;
   editingTexto = '';
 
-  // cache local de nombres: usuarioId -> nombre
   private namesCache = new Map<string, string>();
 
   ngOnInit() {
@@ -112,9 +111,9 @@ export class RecetaDetalleComponent implements OnInit {
     this.comSvc.getComentariosPorReceta(this.receta.id).subscribe({
       next: cs => {
         this.comentarios = cs || [];
-        // pre-cargar nombres de los usuarios que comentaron
+
         const ids = Array.from(new Set((this.comentarios || []).map(c => String(c.usuarioId))));
-        // eliminar ids que ya tenemos en cache
+
         const toLoad = ids.filter(id => !this.namesCache.has(id));
         if (toLoad.length) {
           this.usersSvc.preloadUsers(toLoad);
@@ -139,7 +138,6 @@ export class RecetaDetalleComponent implements OnInit {
     this.comSvc.addComentario(this.receta.id, user.id, texto).subscribe({
       next: c => {
         this.comentarios.push(c);
-        // cachear el nombre del usuario actual si no esta
         if (!this.namesCache.has(String(user.id))) {
           this.namesCache.set(String(user.id), user.nombre || `Usuario ${user.id}`);
         }
@@ -197,7 +195,6 @@ export class RecetaDetalleComponent implements OnInit {
     });
   }
 
-  /* Permisos y utilidades */
   puedeModificarReceta(): boolean {
     const user = this.auth.getUser();
     if (!user || !this.receta) return false;
@@ -230,16 +227,12 @@ export class RecetaDetalleComponent implements OnInit {
     });
   }
 
-  /**
-   * Devuelve nombre a mostrar para un usuario.
-   * Si está en cache lo retorna; si no, dispara petición para caché y retorna fallback "Usuario <id>" por ahora.
-   */
+
   displayNameFor(usuarioId: number | string): string {
     const key = String(usuarioId);
     const cached = this.namesCache.get(key);
     if (cached) return cached;
 
-    // Si coincide con el usuario local, devolvemos su nombre y cacheamos
     const local = this.auth.getUser();
     if (local && String(local.id) === key) {
       const name = local.nombre || `Usuario ${key}`;
@@ -247,75 +240,12 @@ export class RecetaDetalleComponent implements OnInit {
       return name;
     }
 
-    // disparar petición en background para cachear el nombre (sin bloquear UI)
     this.usersSvc.getUserById(key).subscribe(u => {
       if (u && u.nombre) {
         this.namesCache.set(key, u.nombre);
       }
     });
 
-    // fallback mientras carga
     return `Usuario ${key}`;
   }
 }
-
-
-// export class RecetaDetalleComponent implements OnInit {
-//   private route = inject(ActivatedRoute);
-//   private recetasSvc = inject(RecetasService);
-//   private favSvc = inject(FavoritosService);
-//   private auth = inject(AuthService);
-
-//   receta: Receta | null = null;
-//   isFavorito = false;
-//   favoritoId?: number;
-
-//   ngOnInit() {
-//     const id = Number(this.route.snapshot.paramMap.get('id'));
-//     if (id) {
-//       this.recetasSvc.getReceta(id).subscribe(r => {
-//         this.receta = r;
-//         this.loadFavoritoStatus();
-//       });
-//     }
-//   }
-
-//   async loadFavoritoStatus() {
-//     const user = this.auth.getUser();
-//     if (!user || !this.receta) {
-//       this.isFavorito = false;
-//       this.favoritoId = undefined;
-//       return;
-//     }
-//     const f = await this.favSvc.findFavorito(user.id, this.receta.id);
-//     this.isFavorito = !!f;
-//     this.favoritoId = f?.id;
-//   }
-
-//   async toggleFavorito() {
-//     const user = this.auth.getUser();
-//     if (!user) {
-//       location.href = '/login';
-//       return;
-//     }
-//     if (!this.receta) return;
-
-//     if (this.isFavorito && this.favoritoId) {
-//       try {
-//         await firstValueFrom(this.favSvc.removeFavoritoById(this.favoritoId));
-//         this.isFavorito = false;
-//         this.favoritoId = undefined;
-//       } catch (e) {
-//         console.error(e);
-//       }
-//     } else {
-//       this.favSvc.addFavorito(user.id, this.receta.id).subscribe({
-//         next: f => {
-//           this.isFavorito = true;
-//           this.favoritoId = f.id;
-//         },
-//         error: e => console.error(e)
-//       });
-//     }
-//   }
-// }

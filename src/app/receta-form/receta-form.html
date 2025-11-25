@@ -32,34 +32,3 @@
         <button type="button" *ngIf="editMode" (click)="cancelar()">Cancelar</button>
       </form>
     </section>
-
-<!--
-<section>
-      <h2>Crear receta</h2>
-      <form (ngSubmit)="submit()">
-        <div><label>Título</label><input [(ngModel)]="titulo" name="titulo" required /></div>
-        <div><label>Descripción</label><textarea [(ngModel)]="descripcion" name="descripcion" required></textarea></div>
-        <div>
-          <label>Categoría</label>
-          <select [(ngModel)]="categoria" name="categoria" required>
-            <option>Desayuno</option>
-            <option>Almuerzo</option>
-            <option>Cena</option>
-            <option>Postre</option>
-          </select>
-        </div>
-        <div>
-          <label>Dificultad</label>
-          <select [(ngModel)]="dificultad" name="dificultad" required>
-            <option>Fácil</option>
-            <option>Media</option>
-            <option>Difícil</option>
-          </select>
-        </div>
-        <div><label>Tiempo (min)</label><input type="number" [(ngModel)]="tiempo" name="tiempo" required /></div>
-
-        <div *ngIf="error" class="error">{{ error }}</div>
-        <button type="submit">Crear</button>
-      </form>
-    </section>
-  -->
